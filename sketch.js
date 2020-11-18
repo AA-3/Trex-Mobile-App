@@ -146,17 +146,19 @@ function draw() {
     cloudsGroup.setLifetimeEach(-1);
      
      obstaclesGroup.setVelocityXEach(0);
-     cloudsGroup.setVelocityXEach(0);    
+     cloudsGroup.setVelocityXEach(0); 
+     
+      if(keyDown("space") ||touches.length>0) {
+      reset();
+    touches=[];   
+      }
    }
   
  
   //stop trex from falling down
   trex.collide(invisibleGround);
-  
-  if(keyDown("space") ||touches.length>0) {
-      reset();
-    touches=[];              
-    }
+            
+    
 
 
   drawSprites();
